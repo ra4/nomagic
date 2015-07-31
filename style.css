@@ -1,0 +1,62 @@
+/*
+        Theme Name: nomagic
+        Theme URI: https://github.com/rajat365/
+        Author: pilot
+        Author URI: https://github.com/rajat365/
+        Description: A blank thems : No styles
+        Version: 1.0
+
+*/
+
+body{
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    color:#333
+}
+
+a:link,
+a:visited{
+    color:#006e3
+}
+p{
+    line-height:1.6em;
+
+}
+/*General layout */
+div.container{
+
+    max-width:920px;
+    margin:0 auto;
+    padding-left:20px;
+    padding-right:20px;
+}
+.site-header{
+    border-bottom:2px solid #999;
+}
+.site-footer{
+    margin-top:30px;
+
+}
+article.post{
+    border-bottom:2px dotted #999;
+}
+article.post:last-of-type{
+    border-bottom:none;
+}
+/* main column*/
+.main-column{
+    width:66%;
+    float:left;
+}
+/* Secondary Column*/
+.secondary-column{
+    width:30%;
+    float:right;
+}
+/* Footer widget Area*/
+.footer-wedget-area{
+    width:25%;
+    float:left;
+    padding-right:40%;
+    box-sizing:bordr-box;
+}
