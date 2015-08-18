@@ -25,3 +25,41 @@ jQuery(document).ready(function($){
 		$('#preview_header_logo').attr("src",'');
 	});
 });
+/* Image uploader for theme option Favicon */
+jQuery(document).ready(function($){
+    $('#upload-favicon-btn ,#preview_favicon').click(function(e) {
+		e.preventDefault();
+        var image = wp.media({ 
+            title: 'Upload Image',
+            // mutiple: true if you want to upload multiple files at once
+            multiple: false
+		}).open()
+        .on('select', function(e){
+            // This will return the selected image from the Media Uploader, the result is an object
+            var uploaded_image = image.state().get('selection').first();
+            // We convert uploaded_image to a JSON object to make accessing it easier
+            // Output to the console uploaded_image
+            console.log(uploaded_image);
+            var nomagic_favicon = uploaded_image.toJSON().url;
+            // Let's assign the url value to the input field
+            $('.favicon-upload-btn').val(nomagic_favicon);
+			$('#preview_favicon').attr("src", nomagic_favicon);
+		});
+	});
+	$('#remove-favicon-btn').click(function(e) {
+		$('.favicon-upload-btn').val('');
+		$('#preview_favicon').attr("src",'');
+	});
+	
+	   $('.nomagic-postdatechkbox').change(function() {
+        if($(this).is(":checked")) {
+			$('.nomagic-postdatechkbox').val(1);
+            
+        }
+		else{
+			alert();
+			$('.nomagic-postdatechkbox').val(2);
+		}
+      });
+});
+
